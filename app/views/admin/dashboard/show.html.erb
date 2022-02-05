@@ -1,2 +1,30 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<%# <h1>Admin::Dashboard#show</h1>
+<p>Find me in app/views/admin/dashboard/show.html.erb</p> %>
+<h1>Admin Dashboard</h1>
+<div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Total Items in Database:</th>
+      <th scope="col">Admin Utilities</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Products</th>
+      <td><%= @product_count %></td>
+      <td><a href=/admin/products> Edit Products </a> | <a href=/> View Products </a></td>
+    </tr>
+    <tr>
+      <th scope="row">Categories</th>
+      <td><%= @category_count %></td>
+      <td><a href=/admin/categories> Edit Categories </a> | <a href=/categories> View Categories </a></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+  <%= link_to "Return to Main Index", root_path, class: 'btn btn-lg btn-primary' %>
