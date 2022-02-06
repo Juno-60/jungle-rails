@@ -20,7 +20,6 @@ Rails.application.routes.draw do
 
   resources :about, only: [:index]
   
-  # resources :sessions, only: [:new, :create, :destroy], path_names: { new: 'login', create: 'login', destroy: 'logout'}
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
