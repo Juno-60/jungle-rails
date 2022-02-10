@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "visitor clicks on an individual product", type: :feature, js: true do
+RSpec.feature "visitor adds product to cart", type: :feature, js: true do
 
   # SETUP
   before :each do
@@ -17,17 +17,16 @@ RSpec.feature "visitor clicks on an individual product", type: :feature, js: tru
     end
   end
 
-  scenario "they click on product and are redirected to its page" do
+  scenario "visitor clicks add button and change is reflected in navbar cart item count" do
     
     # ACT
     visit root_path
-    find('.product header', match: :first).click
-
+    find('.product footer', match: :first).click_on('Add')
     # DEBUG / VERIFY
     # save_screenshot
 
     # expectation:
-    expect(page).to have_css 'section.products-show'
+    expect(page).to have_content('My Cart (1)')
   end
 
 end
